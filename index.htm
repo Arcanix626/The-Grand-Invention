@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grand Invention</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="card-border">
+            <div class="card-content">
+                <h1 class="card-title">The Grand Invention</h1>
+                <p class="description">Pon tu nombre para confirmar tu assistencia (todo en minusculas).</p>
+                <div class="input-area">
+                    <input type="text" id="nameInput" placeholder="Your full name">
+                    <button onclick="checkAccess()">Confirma tu asistencia</button>
+                </div>
+                <div id="invitation-details" class="invitation-details"></div>
+
+                <div id="event-confirmation-section" class="event-confirmation-section">
+                    <p id="confirmation-prompt" style="display: none; color: #f0e68c;">Click to confirm your attendance for specific events:</p>
+                    <button id="magicConfirmBtn" class="confirm-event-button magic-button" onclick="confirmEvent('magic')" style="display: none;">Confirm Magic Night ✨</button>
+                    <button id="karaokeConfirmBtn" class="confirm-event-button karaoke-button" onclick="confirmEvent('karaoke')" style="display: none;">Confirm Karaoke Night 🎤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-access-panel">
+        <h3>Admin Access</h3>
+        <input type="password" id="adminCodeInput" placeholder="Enter code">
+        <button onclick="authenticateAndShowGuests()">Access Confirmed List</button>
+        <div id="adminMessage" class="results" style="margin-top: 10px;"></div>
+        <div id="adminConfirmedGuestsList" class="results"></div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #1a1a1a;
+    color: #d4af37;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('background.png');
+    background-size: cover;
+    /* background-attachment: fixed; -- This line should be removed for scrolling */
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('background_mobile.png');
+    }
+}
+
+.invitation-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    margin-top: 50vh; /* Adjust as needed to push the card down from the top */
+    /* margin-bottom: auto; -- Remove this if you're using column flex-direction as it will conflict */
+}
+
+.card-border {
+    border: 4px solid #d4af37;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-title {
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.event-date {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #333;
+    color: #f0e68c;
+}
+
+.input-area button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d4af37;
+    color: #1a1a1a;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+    background-color: #b8860b;
+}
+
+.invitation-details {
+    margin-top: 20px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #f0e68c;
+    text-align: left;
+}
+
+.invitation-details strong {
+    color: #d4af37;
+}
+
+/* NEW: Event Confirmation Section and Buttons */
+.event-confirmation-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.confirm-event-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px; /* Space between buttons */
+    width: 80%; /* Make buttons take up more width */
+    max-width: 300px; /* Limit max width */
+    display: block; /* Make them stack vertically */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirm-event-button:hover {
+    transform: translateY(-3px);
+}
+
+.magic-button {
+    background-color: #007bff; /* Blue for Magic */
+    color: white;
+}
+
+.magic-button:hover {
+    background-color: #0056b3;
+}
+
+.karaoke-button {
+    background-color: #6f42c1; /* Purple for Karaoke */
+    color: white;
+}
+
+.karaoke-button:hover {
+    background-color: #56319e;
+}
+
+
+/* ADMIN SECTION STYLING */
+.admin-access-panel {
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #cfa14a;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px #a67c00;
+    text-align: center;
+    color: #fdf6e3;
+    margin-bottom: 50px; /* Space at the bottom of the page */
+}
+
+.admin-access-panel h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.admin-access-panel input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #333;
+    color: #f0e68c;
+    text-align: center;
+}
+
+.admin-access-panel button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8B4513;
+    color: #fdf6e3;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-access-panel button:hover {
+    background-color: #A0522D;
+}
+
+#adminConfirmedGuestsList ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    color: #f0e68c;
+    text-align: left;
+}
+
+#adminConfirmedGuestsList li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #444;
+}
+
+#adminConfirmedGuestsList li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card-title {
+        font-size: 2em;
+    }
+    .input-area {
+        flex-direction: column;
+    }
+    .input-area button {
+        width: 100%;
+    }
+    .confirm-event-button {
+        width: 95%; /* Adjust for smaller screens */
+    }
+}
