@@ -5,20 +5,23 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* This centers content horizontally */
     min-height: 100vh;
+    width: 100vw; /* ADDED: Ensures body takes full viewport width for proper centering */
     background-image: url('background.png');
     background-size: cover;
-    background-position: center center; /* ADDED: Centers the image */
-    background-repeat: no-repeat;     /* ADDED: Prevents repeating, good practice */
+    background-position: center center; /* Ensures the image itself is centered within its 'cover' space */
+    background-repeat: no-repeat;
     /* background-attachment: fixed; -- This line should be removed for scrolling */
 }
 
 @media (max-width: 768px) {
     body {
         background-image: url('background_mobile.png');
-        background-position: center center; /* ADDED: Ensure centering for mobile background too */
-        background-repeat: no-repeat;     /* ADDED: Good practice for mobile too */
+        background-size: contain; /* CHANGED: To ensure the full image is visible, no cropping */
+        background-position: center center; /* Centers the full image within the screen */
+        background-repeat: no-repeat; /* Prevents repeating if image doesn't fill entirely */
+        background-color: #1a1a1a; /* Ensures the background color fills any empty space created by 'contain' */
     }
 }
 
