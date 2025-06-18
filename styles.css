@@ -9,12 +9,16 @@ body {
     min-height: 100vh;
     background-image: url('background.png');
     background-size: cover;
+    background-position: center center; /* ADDED: Centers the image */
+    background-repeat: no-repeat;     /* ADDED: Prevents repeating, good practice */
     /* background-attachment: fixed; -- This line should be removed for scrolling */
 }
 
 @media (max-width: 768px) {
     body {
         background-image: url('background_mobile.png');
+        background-position: center center; /* ADDED: Ensure centering for mobile background too */
+        background-repeat: no-repeat;     /* ADDED: Good practice for mobile too */
     }
 }
 
@@ -41,116 +45,81 @@ body {
 
 .card-content {
     text-align: center;
+    position: relative;
+    z-index: 1; /* Ensures content is above any pseudo-elements or background effects */
 }
 
 .card-title {
-    font-family: 'IM Fell DW Pica SC', serif;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.event-date {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    color: #d4af37;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-family: 'Cinzel Decorative', cursive; /* Example of a more thematic font */
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
 }
 
 .description {
+    color: #fdf6e3;
     font-size: 1.1em;
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .input-area {
-    display: flex;
-    gap: 10px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
 }
 
-.input-area input {
-    flex-grow: 1;
+.input-area input[type="text"] {
+    width: calc(100% - 22px);
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #d4af37;
     border-radius: 5px;
     font-size: 1em;
     background-color: #333;
     color: #f0e68c;
+    text-align: center;
 }
 
 .input-area button {
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #d4af37;
-    color: #1a1a1a;
+    background-color: #8B4513; /* Brown/Orange color */
+    color: #fdf6e3;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 5px;
 }
 
 .input-area button:hover {
-    background-color: #b8860b;
+    background-color: #a0522d; /* Darker brown on hover */
 }
 
 .invitation-details {
     margin-top: 20px;
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #f0e68c;
-    text-align: left;
-}
-
-.invitation-details strong {
-    color: #d4af37;
-}
-
-/* NEW: Event Confirmation Section and Buttons */
-.event-confirmation-section {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.confirm-event-button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
+    color: #fdf6e3;
     font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 10px; /* Space between buttons */
-    width: 80%; /* Make buttons take up more width */
-    max-width: 300px; /* Limit max width */
-    display: block; /* Make them stack vertically */
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #cfa14a;
 }
 
-.confirm-event-button:hover {
-    transform: translateY(-3px);
+.invitation-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
 }
 
-.magic-button {
-    background-color: #007bff; /* Blue for Magic */
-    color: white;
+.invitation-details li {
+    margin-bottom: 8px;
 }
 
-.magic-button:hover {
-    background-color: #0056b3;
-}
-
-.karaoke-button {
-    background-color: #6f42c1; /* Purple for Karaoke */
-    color: white;
-}
-
-.karaoke-button:hover {
-    background-color: #56319e;
-}
-
-
-/* ADMIN SECTION STYLING */
+/* Admin Access Panel styling (from previous step) */
 .admin-access-panel {
-    margin-top: 50px;
+    margin-top: 50px; /* Space between the card and this section */
     background-color: rgba(0, 0, 0, 0.7);
     border: 3px solid #cfa14a;
     padding: 20px;
@@ -192,38 +161,5 @@ body {
 }
 
 .admin-access-panel button:hover {
-    background-color: #A0522D;
-}
-
-#adminConfirmedGuestsList ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-    color: #f0e68c;
-    text-align: left;
-}
-
-#adminConfirmedGuestsList li {
-    padding: 5px 0;
-    border-bottom: 1px dotted #444;
-}
-
-#adminConfirmedGuestsList li:last-child {
-    border-bottom: none;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .card-title {
-        font-size: 2em;
-    }
-    .input-area {
-        flex-direction: column;
-    }
-    .input-area button {
-        width: 100%;
-    }
-    .confirm-event-button {
-        width: 95%; /* Adjust for smaller screens */
-    }
+    background-color: #a0522d;
 }
