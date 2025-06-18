@@ -1,0 +1,7 @@
+[build]
+  functions = "netlify/functions"
+  publish = "." # This tells Netlify where your built site files are located (your project root)
+
+# Optional: If you want to use Node.js version 18 (recommended for functions)
+[build.environment]
+  NODE_VERSION = "18"
