@@ -22,7 +22,7 @@ const ADD_MAGIC_CODE = "621"; // Code to add person to local magic list
 
 // === GOOGLE FORM CONFIGURATION ===
 // IMPORTANT: Replace this with the actual URL of your Google Form
-const GOOGLE_FORM_URL = "https://forms.gle/SWFB8JLdkXcTbpKZ6"; // <-- REPLACE THIS!
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScwCIGQ0-Wh0Ze0LAMzlm8JWryWdvPbCQvHp4Wq8mm4BfsT4Q/viewform?usp=header"; // <-- REPLACE THIS!
 // =================================
 
 // Helper functions for localStorage management (for Magic and Karaoke lists)
